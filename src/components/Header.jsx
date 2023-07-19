@@ -17,7 +17,7 @@ const Header = () => {
         <div className="text-3xl absolute right-8 top-10 cursor-pointer block md:hidden" onClick={() => setDropdown(!dropdown)}>
           <RxHamburgerMenu className="text-white"/>
         </div>
-        <ul className={`md:flex md:items-center md:flex-row md:gap-12 md:pb-0 pb-4 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:top-0 top-[6.7rem] flex flex-col ${dropdown ? 'block' : 'hidden'} text-center items-center`}>
+        <ul className={`md:flex md:items-center md:flex-row md:gap-12 md:pb-0 pb-4 absolute md:static bg-blue-400 md:bg-transparent md:z-auto z-[-1] left-0 w-full md:w-auto md:top-0 top-[6.7rem] flex flex-col ${dropdown ? 'block' : 'hidden'} text-center items-center`}>
           <li className="md:my-0 my-4 md:ml-8">
             <a href="#" className="text-white text-base ">
               About
