@@ -1,3 +1,4 @@
+import Button from '../components/Button'
 
 const Section = () => {
   return (
@@ -15,12 +16,10 @@ const Section = () => {
           perhatian dari venture capital atau angel investor
         </p>
         <div className="flex space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 py-4">
-          <a
-            href="#"
-            className="inline-flex justify-center items-center py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-[#3EB7DD] hover:bg-cyan-500 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-          >
-            Dapatkan startup kamu
-          </a>
+          <Button 
+            href='#'
+            text='Dapatkan Startup Kamu'
+          />
         </div>
       </div>
     </section>
