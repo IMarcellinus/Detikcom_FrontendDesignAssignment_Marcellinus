@@ -45,7 +45,7 @@ const Header = () => {
           </li>
           <NavLink to="/register">
             <li className="text-[#007CBD] w-fit bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full px-5 py-2.5 md:my-0 my-4 cursor-pointer">
-              Register
+              <a href="#register">Register</a>
             </li>
           </NavLink>
         </ul>

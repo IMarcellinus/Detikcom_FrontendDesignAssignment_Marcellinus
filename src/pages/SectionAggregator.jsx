@@ -9,13 +9,13 @@ import gambar6 from "../assets/images/gambar6.png";
 const SectionAggregator = () => {
   return (
     <div className="w-full h-full py-14">
-      <div className="px-4 lg:px-8">
+      <div className="px-4 lg:px-8 py-4" id="aggregator">
         <h1 className="uppercase font-bold text-biru-muda text-3xl">
           latest update
         </h1>
       </div>
-      <div className="grid md:grid-cols-3" id="aggregator">
-        <div className="pt-10 flex flex-col px-4 lg:px-8 select-none hover:text-biru-muda group">
+      <div className="grid md:grid-cols-3 gap-8 ">
+        <div className="pt-10 flex flex-col px-4 lg:px-8 select-none hover:text-biru-muda group ">
           <img
             src={gambar1}
             className="transition-transform transform origin-center scale-100 group-hover:scale-110 hover:scale-40"
@@ -26,7 +26,7 @@ const SectionAggregator = () => {
           </p>
           <p className="font-thin text-[#7A7B7E]">1 hari yang lalu</p>
         </div>
-        <div className="pt-10 px-4 flex flex-col lg:px-8 group select-none hover:text-biru-muda">
+        <div className="pt-10 px-4 flex flex-col lg:px-8 group select-none hover:text-biru-muda ">
           <img
             src={gambar2}
             className="transition-transform transform origin-center scale-100 group-hover:scale-110 hover:scale-40"
@@ -38,7 +38,7 @@ const SectionAggregator = () => {
           </p>
           <p className="font-thin text-[#7A7B7E]">1 hari yang lalu</p>
         </div>
-        <div className="pt-10 px-4 flex flex-col lg:px-8 group select-none hover:text-biru-muda">
+        <div className="pt-10 px-4 flex flex-col lg:px-8 group select-none hover:text-biru-muda ">
           <img
             src={gambar3}
             alt="Gambar 3"
@@ -50,7 +50,7 @@ const SectionAggregator = () => {
           <p className="font-thin text-[#7A7B7E]">1 hari yang lalu</p>
         </div>
       </div>
-      <div className="grid md:grid-cols-3">
+      <div className="grid md:grid-cols-3 gap-8">
         <div className="pt-10 flex flex-col px-4 lg:px-8 hover:text-biru-muda group select-none">
           <img
             src={gambar4}

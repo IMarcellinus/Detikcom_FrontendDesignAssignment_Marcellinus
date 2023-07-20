@@ -7,7 +7,7 @@ const Section = () => {
         <p className="mb-4 text-2xl font-semibold text-white lg:text-xl sm:px-16 lg:px-48">
           Detikfinance Business Plan Competition 2023
         </p>
-        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl uppercase sm:text-center">
+        <h1 className="mb-4 text-3xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl uppercase sm:text-center">
           empowering indonesia startup
         </h1>
         <p className="text-white font-semibold sm:text-center md:max-w-4xl md:mx-auto">

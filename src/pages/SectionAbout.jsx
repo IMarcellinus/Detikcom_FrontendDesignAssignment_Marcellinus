@@ -3,7 +3,7 @@ import iconplay from '../assets/images/iconplay.png'
 
 const SectionAbout = () => {
   return (
-    <div className="flex justify-center w-full h-auto py-10 px-10 md:px-24" id="about">
+    <div className="flex justify-center w-full h-auto md:py-24 py-24 px-10 md:px-24 " id="about">
       <div className="flex flex-col lg:flex-row items-center bg-white">
         <div className="w-full lg:w-4/12 relative bg-red-200">
           <img

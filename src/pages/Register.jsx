@@ -7,7 +7,7 @@ const Register = () => {
     <>
       <Header />
       <section className="bg-cover bg-no-repeat bg-register-section sm:h-[500px] h-screen w-full">
-        <div className="pt-64 sm:px-24 px-3 md:mb-20 mb-16">
+        <div className="pt-64 sm:px-20 md:px-32 px-4 md:mb-20 mb-16" id="#register">
           <div className="text-center w-full">
             <p className="text-white capitalize text-4xl font-bold">
               registrasi
