@@ -8,13 +8,15 @@ const Header = () => {
   return (
     <header className="shadow-md w-full fixed top-0 left-0 z-50">
       <div className="md:flex items-center justify-between bg-[#007CBD] py-2 md:px-10 px-7">
-        <div className="flex-items-center text-white">
-          <p>
-            <b>detik</b>finance
-          </p>
-          <p className="uppercase font-bold text-lg">business plan</p>
-          <p className="tracking-widest">competition 2023</p>
-        </div>
+        <NavLink to='/'>
+          <div className="flex-items-center text-white w-fit">
+            <p>
+              <b>detik</b>finance
+            </p>
+            <p className="uppercase font-bold text-lg">business plan</p>
+            <p className="tracking-widest">competition 2023</p>
+          </div>
+        </NavLink>
         <div
           className="text-3xl absolute right-8 top-8 cursor-pointer block md:hidden"
           onClick={() => setDropdown(!dropdown)}
@@ -27,17 +29,17 @@ const Header = () => {
           } text-center items-center`}
         >
           <li className="md:my-0 my-4 md:ml-8">
-            <a href="#" className="text-white text-base ">
+            <a href="#about" className="text-white text-base ">
               About
             </a>
           </li>
           <li className="md:my-0 my-4">
-            <a href="#" className="text-white text-base">
+            <a href="#mechanism" className="text-white text-base">
               Mechanism
             </a>
           </li>
           <li className="md:my-0 my-4">
-            <a href="#" className="text-white text-base">
+            <a href="#aggregator" className="text-white text-base">
               Latest Update
             </a>
           </li>

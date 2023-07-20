@@ -14,7 +14,7 @@ const SectionAggregator = () => {
           latest update
         </h1>
       </div>
-      <div className="grid md:grid-cols-3">
+      <div className="grid md:grid-cols-3" id="aggregator">
         <div className="pt-10 flex flex-col px-4 lg:px-8 select-none hover:text-biru-muda group">
           <img
             src={gambar1}

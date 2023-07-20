@@ -4,7 +4,7 @@ import iconpresentasi from "../assets/images/iconpresentasi.png";
 
 const SectionMekanisme = () => {
   return (
-    <section className="bg-cover bg-no-repeat bg-mekanisme-section min-h-screen w-full flex justify-center items-center">
+    <section className="bg-cover bg-no-repeat bg-mekanisme-section min-h-screen w-full flex justify-center items-center" id="mechanism">
       <div className="lg:px-44 w-full h-auto px-2">
         <h1 className="text-white text-4xl capitalize font-bold py-8">
           Mekanisme

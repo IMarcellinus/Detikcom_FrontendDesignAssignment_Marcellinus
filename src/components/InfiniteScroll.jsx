@@ -10,65 +10,84 @@ import logo7 from "../assets/images/logo7.png";
 import logo8 from "../assets/images/logo8.png";
 import "../assets/css/InfiniteScroll.css";
 
-const InfiniteScroll = () => {
-  const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8];
+const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8];
 
-  const scrollContainerRef = useRef(null);
+const InfiniteScroll = () => {
+  const containerRef = useRef(null);
+  const [loadedLogos, setLoadedLogos] = useState([]);
+  const logoWidth = 100; // Ganti sesuai dengan lebar gambar logo
 
   useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-
-    const scrollStep = 6; // Percepat scroll dengan menurunkan nilai scrollStep
-    const scrollInterval = 10; // Percepat animasi dengan menurunkan nilai scrollInterval
+    // Tambahkan kode untuk gerakan otomatis ke kiri setiap beberapa detik
+    const container = containerRef.current;
+    const scrollStep = 0.5;
+    const scrollingInterval = 1;
     let scrollAmount = 0;
-    let scrollTimer;
+    let scrollInterval = null;
 
-    const startScroll = () => {
-      scrollTimer = setInterval(() => {
-        scrollContainer.scrollLeft += scrollStep;
-        scrollAmount += scrollStep;
-        if (scrollAmount >= scrollContainer.scrollWidth / 2) {
-          clearInterval(scrollTimer);
-          scrollAmount = 0;
-          setTimeout(startScroll, 2000); // Mengatur jeda waktu sebelum animasi scroll dimulai lagi
-        }
-      }, scrollInterval);
+    const startAutoScroll = () => {
+      scrollAmount += scrollStep;
+      container.scrollLeft += scrollStep;
+
+      if (scrollAmount >= logoWidth) {
+        scrollAmount = 0;
+        container.appendChild(container.firstElementChild);
+        container.scrollLeft -= logoWidth;
+      }
     };
 
-    if (scrollContainer) {
-      startScroll();
-    }
+    const startScrolling = () => {
+      if (!scrollInterval) {
+        scrollInterval = setInterval(startAutoScroll, scrollingInterval);
+      }
+    };
 
+    const stopScrolling = () => {
+      if (scrollInterval) {
+        clearInterval(scrollInterval);
+        scrollInterval = null;
+      }
+    };
+
+    // container.addEventListener("mouseenter", stopScrolling);
+    container.addEventListener("mouseleave", startScrolling);
+
+    startScrolling();
+
+    // Bersihkan interval ketika komponen dibongkar
     return () => {
-      clearInterval(scrollTimer);
+      stopScrolling();
     };
   }, []);
 
+  useEffect(() => {
+    // Update logo list ketika komponen pertama kali dimuat
+    updateLoadedLogos(0);
+  }, []);
+
+  const updateLoadedLogos = (startIndex) => {
+    const newLogos = [...logos, ...logos.slice(0, startIndex)];
+    setLoadedLogos(newLogos);
+  };
+
   return (
-    <div className="w-full h-64 overflow-hidden">
+    <div className="w-full h-26 overflow-hidden">
       <div
-        ref={scrollContainerRef}
-        className="flex h-full overflow-x-hidden scrollbar-none"
-        style={{
-          scrollBehavior: "smooth",
-          scrollSnapType: "x mandatory",
-        }}
+        ref={containerRef}
+        className="flex overflow-hidden w-full h-auto px-24"
       >
-        {logos.map((logo, index) => (
-          <div
+        {loadedLogos.map((logo, index) => (
+          <img
             key={index}
-            className="flex-none w-64 h-64 scroll-snap-align-start mx-2 rounded-lg shadow-md"
-          >
-            <img
-              src={logo}
-              alt={`Logo ${index + 1}`}
-              className="w-full h-full object-contain"
-            />
-          </div>
+            src={logo}
+            alt={`Logo ${index + 1}`}
+            className="w-26 h-26 mx-2 object-contain"
+          />
         ))}
       </div>
     </div>
   );
 };
+
 
 export default InfiniteScroll;
